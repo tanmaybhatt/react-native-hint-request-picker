@@ -49,7 +49,7 @@ class HintRequestPickerModule(private val reactContext: ReactApplicationContext)
     if (requestCode === Constants.PHONE_PICKER_REQUEST) {
       val map = Arguments.createMap()
       if (resultCode === RESULT_OK) {
-        val credential: Credential? = data.getParcelableExtra(Credential.EXTRA_KEY)
+        val credential = data.getParcelableExtra<Credential>(Credential.EXTRA_KEY)
         if (credential == null) {
           return;
         }
@@ -63,7 +63,7 @@ class HintRequestPickerModule(private val reactContext: ReactApplicationContext)
     else if (requestCode === Constants.EMAIL_PICKER_REQUEST) {
       val map = Arguments.createMap()
       if (resultCode === RESULT_OK) {
-        val credential: Credential? = data.getParcelableExtra(Credential.EXTRA_KEY)
+        val credential = data.getParcelableExtra<Credential>(Credential.EXTRA_KEY)
         if (credential == null) {
           return;
         }
